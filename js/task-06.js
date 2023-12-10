@@ -12,7 +12,8 @@ const btnDestroy = document.querySelector("[data-destroy]")
 const newBoxes = document.querySelector("#boxes")
 
 function createBoxes(amount) {
-  newBoxes.innerHTML = '';
+  if (amount <= 100) {
+    newBoxes.innerHTML = '';
 
     for (let i = 0; i < amount; i++) {
       const newElements = document.createElement('div');
@@ -22,6 +23,8 @@ function createBoxes(amount) {
       newElements.style.backgroundColor = getRandomHexColor();
       newBoxes.appendChild(newElements);
     }
+  }
+  
 }
 
 btnCreate.addEventListener("click", () => {
